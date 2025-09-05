@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN" style="margin: 0; padding: 0; height: 100%;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>页gh|songs</title>
+    <style>
+        .cho{font-size: 2vw; border: 2px black solid; border-radius: 40px; text-align: center; transition: all 0.5s; margin: 1vw;}
+        .cho:hover{color: white; background-color: black;}
+        ::-webkit-scrollbar {display: none;}
+    </style>
+</head>
+<body style="margin: 0; padding: 0; display: flex; justify-content: center; height: 100%; align-content: center; flex-wrap: wrap; justify-content: space-evenly">
+
+    <div style="width: 20vw; height: 37.5vw; color: black; background-color: white; border: 2px black solid; border-radius: 20px; padding: 1vw; overflow: scroll;">
+        <div style="font-size: 2vw;">歌曲列表</div>
+        <div style="height: 3vh;"></div>
+
+
+        <div class="cho" video="Butcher Vanity.mp4" onclick="playvideo(this)">虚荣屠夫</div>
+        <div class="cho" video="T氏の話を信じるな.mp4" onclick="playvideo(this)">不要相信T氏的话</div>
+        <div class="cho" video="いますぐ輪廻.mp4" onclick="playvideo(this)">即刻轮回</div>
+        <div class="cho" video="死別.mp4" onclick="playvideo(this)">死別</div>
+        <div class="cho" video="神のまにまに.mp4" onclick="playvideo(this)">神的随波逐流</div>
+        <div class="cho" video="千本桜.mp4" onclick="playvideo(this)">千本樱</div>
+        <div class="cho" video="Bad Apple!!.mp4" onclick="playvideo(this)">Bad Apple!!</div>
+        <div class="cho" video="ねぇねぇねぇ。.mp4" onclick="playvideo(this)">呐呐呐。</div>
+        <div class="cho" video="モニタリング.mp4" onclick="playvideo(this)">视奸</div>
+        <div class="cho" video="転生林檎.mp4" onclick="playvideo(this)">转生苹果</div>
+        <div class="cho" video="天天天国地獄国.mp4" onclick="playvideo(this)">天天天国地狱国</div>
+        <div class="cho" video="超主人公.mp4" onclick="playvideo(this)">超主人公</div>
+        <div class="cho" video="Cherry Pop.mp4" onclick="playvideo(this)">Cherry Pop</div>
+
+
+
+
+    </div>
+
+    <div style="width: 70vw; height: 39.5vw; color: black; background-color: white; border: 2px black solid; border-radius: 20px; overflow: hidden;">
+        <video style="width: 101%;" controls="controls" id="video" data-setup="{}">
+            <source src="" type="video/mp4">
+        </video>
+    </div>
+
+
+    <script>
+            var last = 0
+        function playvideo(el){
+            var video = document.getElementById('video')
+            var videopath = `songs/${el.getAttribute('video')}`
+            video.src = videopath
+            video.play()
+            // video.load()
+            el.style.color = 'white'
+            el.style.backgroundColor = 'black'
+            if (last != 0){
+                last.style.color = 'black'
+                last.style.backgroundColor = 'white'
+            }
+            last = el
+        }
+    </script>
+
+</body>
+</html>

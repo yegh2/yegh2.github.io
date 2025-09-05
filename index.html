@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-CN" style="background-color: #FFFFFF; height: 100%;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>页gh</title>
+    <link rel="icon" href="favicon.png">
+    <style>
+        *{padding: 0; margin: 0;}
+        html, body {
+            overflow-x: hidden; /* 防止水平滚动条 */
+        }
+        #TT{margin: 10px; height: 25vh; background-color: #FFFFFF; border-radius: 7px;}
+        ::-webkit-scrollbar {display: none;}
+        
+        /* 卡片基础样式 */
+        .move{
+            float: left; 
+            height: 300px; 
+            width: 300px; 
+            word-wrap: break-word; 
+            border: 1px solid #000000; 
+            border-radius: 10px; 
+            overflow: hidden; 
+            margin: 10px; 
+            color: rgb(255, 255, 255);
+            background-color: black;
+            transition: all 0.5s;
+            /* 初始状态在左侧外部 */
+            transform: translateY(200vh);
+            /* 添加飞入动画 */
+            animation: slideIn 0.8s forwards;
+        }
+
+        .move hr{color: #FFFFFF;}
+        
+        /* 飞入动画定义 */
+        @keyframes slideIn {
+            from {
+                transform: translateY(200vh);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+        
+        .move :first-child{font-size: 30px; text-align: center; margin: 20px; height: 40px;}
+        .move :last-child{font-size: 20px; text-align: center; margin: 20px;}
+        .move:hover {
+            color: black;
+            background-color: #FFFFFF;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+        }
+        
+        /* 卡片容器样式 */
+        .cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body style="height: 100%;">
+    <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+
+    <div id="TT"></div>
+
+    <script type="text/javascript">
+        var chartDom = document.getElementById('TT');
+        var myChart = echarts.init(chartDom);
+        var option;
+
+        option = {
+            graphic: {
+                elements: [
+                {
+                    type: 'text',
+                    left: 'center',
+                    top: 'center',
+                    style: {
+                    text: '页gh',
+                    fontSize: 100,
+                    fontWeight: 'bold',
+                    lineDash: [0, 200],
+                    lineDashOffset: 0,
+                    fill: 'transparent',
+                    stroke: '#000000',
+                    lineWidth: 1
+                    },
+                    keyframeAnimation: {
+                    duration: 3000,
+                    loop: false,
+                    keyframes: [
+                        {
+                        percent: 0.7,
+                        style: {
+                            fill: 'transparent',
+                            lineDashOffset: 200,
+                            lineDash: [200, 0]
+                        }
+                        },
+                        {
+                        percent: 0.8,
+                        style: {
+                            fill: 'transparent'
+                        }
+                        },
+                        {
+                        percent: 1,
+                        style: {
+                            fill: '#FFFFFF'
+                        }
+                        }
+                    ]
+                    }
+                }
+                ]
+            }
+        };
+
+    option && myChart.setOption(option);
+
+    setTimeout(() => {
+        var color = 256
+        setInterval(function startchange(){
+            document.getElementById('TT').style.background = `rgb(${color}, ${color}, ${color})`;
+            color = color - 2;
+            
+            if (color <= 0) {
+                color = 0;
+            }
+        }, 1)
+    }, 2100);
+
+    // 监听窗口resize事件
+    window.addEventListener('resize', () => {
+    myChart.resize();
+    });
+
+    // 为每个卡片设置不同的动画延迟
+    document.addEventListener('DOMContentLoaded', function() {
+        var cards = document.querySelectorAll('.move');
+        cards.forEach(function(card, index) {
+            // 设置每个卡片的动画延迟，依次增加
+            card.style.animationDelay = (index * 0.2) + 's';
+        });
+    });
+
+    // var move = document.getElementsByClassName('move')
+    // function suomove(){
+    //     if (document.documentElement.clientWidth <= 400){
+    //         for (var ev in move){
+    //             ev.style.weight = '75vw';
+    //             ev.style.height = '20vw'
+    //         }
+    //     }
+    // }
+    </script>
+
+    <div class="cards-container">
+        
+        <a href="songs.html">
+            <div class="move">
+                <div>一些歌曲</div>
+                <hr>
+                <div>这里没什么好看的</div>
+            </div>
+        </a>
+
+        <a href="">
+            <div class="move">
+                <div>开发中</div>
+                <hr>
+                <div>这里没什么好看的</div>
+            </div>
+        </a>
+
+        <a href="">
+            <div class="move">
+                <div>开发中</div>
+                <hr>
+                <div>这里没什么好看的</div>
+            </div>
+        </a>
+
+        <a href="">
+            <div class="move">
+                <div>开发中</div>
+                <hr>
+                <div>这里没什么好看的</div>
+            </div>
+        </a>
+
+        <a href="">
+            <div class="move">
+                <div>开发中</div>
+                <hr>
+                <div>这里没什么好看的</div>
+            </div>
+        </a>
+
+        <a href="">
+            <div class="move">
+                <div>开发中</div>
+                <hr>
+                <div>这里没什么好看的</div>
+            </div>
+        </a>
+
+        <a href="">
+            <div class="move">
+                <div>开发中</div>
+                <hr>
+                <div>这里没什么好看的</div>
+            </div>
+        </a>
+
+
+    </div>
+
+    <!-- <script>
+        function up(el, scale){
+            scale = scale + 0.01
+            el.style.transform = `scale(${scale})`;
+            if (scale <= 1.5){
+                up(el, scale)
+            }
+        }
+    </script> -->
+</body>
+</html>
