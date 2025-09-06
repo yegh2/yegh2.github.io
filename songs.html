@@ -100,11 +100,10 @@
 
     </div>
 
-    <div style="width: 70vw; height: 39.5vw; color: black; background-color: white; border: 2px black solid; border-radius: 20px; overflow: hidden; display: flex; justify-content: center; align-content: center; flex-wrap: wrap;">
+    <div style="width: 70vw; height: 39.5vw; color: black; background-color: white; border: 2px black solid; border-radius: 20px; overflow: hidden;">
         <video style="width: 100.4%; display: none;" controls="controls" id="video">
             <source src="" type="video/mp4">
         </video>
-        <div id="jz" style="font-size: 5vw; display: none;">加载中</div>
     </div>
 
 
@@ -112,16 +111,11 @@
             var last = 0
         function playvideo(el){
             var video = document.getElementById('video')
-            var jz = document.getElementById('jz')
             video.style.display = "block"
             var videopath = `songs/${el.getAttribute('video')}`
             video.src = videopath
-            video.style.display = "none"
-            jz.style.display = "block"
-            video.load()
-            jz.style.display = "none"
-            video.style.display = "block"
             video.play()
+            // video.load()
             if (last != 0){
                 last.style.color = 'black'
                 last.style.backgroundColor = 'white'
