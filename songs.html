@@ -6,7 +6,7 @@
     <title>页gh|songs</title>
     <style>
         .cho{font-size: 1.5vw; border: 2px black solid; border-radius: 40px; text-align: center; transition: all 0.5s; margin: 1vw;}
-        .cho:hover{color: white; background-color: black;}
+        .cho:hover{color: white !important; background-color: black !important;}
         .cho :last-child{font-size: 1vw;}
         ::-webkit-scrollbar {display: none;}
     </style>
@@ -101,7 +101,7 @@
     </div>
 
     <div style="width: 70vw; height: 39.5vw; color: black; background-color: white; border: 2px black solid; border-radius: 20px; overflow: hidden;">
-        <video style="width: 101%;" controls="controls" id="video" data-setup="{}">
+        <video style="width: 100.4%;" controls="controls" id="video" data-setup="{}">
             <source src="" type="video/mp4">
         </video>
     </div>
@@ -115,13 +115,14 @@
             video.src = videopath
             // video.play()
             // video.load()
-            el.style.color = 'white'
-            el.style.backgroundColor = 'black'
             if (last != 0){
                 last.style.color = 'black'
                 last.style.backgroundColor = 'white'
             }
             last = el
+            el.style.color = 'white'
+            el.style.backgroundColor = 'black'
+            
         }
     </script>
 
