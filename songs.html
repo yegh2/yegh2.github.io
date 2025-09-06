@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>页gh|songs</title>
     <style>
-        .cho{font-size: 2vw; border: 2px black solid; border-radius: 40px; text-align: center; transition: all 0.5s; margin: 1vw;}
+        .cho{font-size: 1.5vw; border: 2px black solid; border-radius: 40px; text-align: center; transition: all 0.5s; margin: 1vw;}
         .cho:hover{color: white; background-color: black;}
+        .cho :last-child{font-size: 1vw;}
         ::-webkit-scrollbar {display: none;}
     </style>
 </head>
@@ -17,22 +18,85 @@
         <div style="height: 3vh;"></div>
 
 
-        <div class="cho" video="Butcher Vanity.mp4" onclick="playvideo(this)">虚荣屠夫</div>
-        <div class="cho" video="T氏の話を信じるな.mp4" onclick="playvideo(this)">不要相信T氏的话</div>
-        <div class="cho" video="いますぐ輪廻.mp4" onclick="playvideo(this)">即刻轮回</div>
-        <div class="cho" video="死別.mp4" onclick="playvideo(this)">死別</div>
-        <div class="cho" video="神のまにまに.mp4" onclick="playvideo(this)">神的随波逐流</div>
-        <div class="cho" video="千本桜.mp4" onclick="playvideo(this)">千本樱</div>
-        <div class="cho" video="Bad Apple!!.mp4" onclick="playvideo(this)">Bad Apple!!</div>
-        <div class="cho" video="ねぇねぇねぇ。.mp4" onclick="playvideo(this)">呐呐呐。</div>
-        <div class="cho" video="モニタリング.mp4" onclick="playvideo(this)">视奸</div>
-        <div class="cho" video="転生林檎.mp4" onclick="playvideo(this)">转生苹果</div>
-        <div class="cho" video="天天天国地獄国.mp4" onclick="playvideo(this)">天天天国地狱国</div>
-        <div class="cho" video="超主人公.mp4" onclick="playvideo(this)">超主人公</div>
-        <div class="cho" video="Cherry Pop.mp4" onclick="playvideo(this)">Cherry Pop</div>
+        <div class="cho" video="Butcher Vanity.mp4" onclick="playvideo(this)">
+            <div>Butcher Vanity</div>
+            <div>虚荣屠夫</div>
+        </div>
 
+        <div class="cho" video="T氏の話を信じるな.mp4" onclick="playvideo(this)">
+            <div>T氏の話を信じるな</div>
+            <div>不要相信T氏的话</div>
+        </div>
 
+        <div class="cho" video="いますぐ輪廻.mp4" onclick="playvideo(this)">
+            <div>いますぐ輪廻</div>
+            <div>即刻轮回</div>
+        </div>
 
+        <div class="cho" video="死別.mp4" onclick="playvideo(this)">
+            <div>死別</div>
+            <div>死别</div>
+        </div>
+
+        <div class="cho" video="神のまにまに.mp4" onclick="playvideo(this)">
+            <div>神のまにまに</div>
+            <div>神的随波逐流</div>
+        </div>
+
+        <div class="cho" video="千本桜.mp4" onclick="playvideo(this)">
+            <div>千本桜</div>
+            <div>千本樱</div>
+        </div>
+
+        <div class="cho" video="Bad Apple!!.mp4" onclick="playvideo(this)">
+            <div>Bad Apple!!</div>
+            <div>Bad Apple!!</div>
+        </div>
+
+        <div class="cho" video="ねぇねぇねぇ。.mp4" onclick="playvideo(this)">
+            <div>ねぇねぇねぇ。</div>
+            <div>呐呐呐。</div>
+        </div>
+
+        <div class="cho" video="モニタリング.mp4" onclick="playvideo(this)">
+            <div>モニタリング</div>
+            <div>视奸</div>
+        </div>
+
+        <div class="cho" video="転生林檎.mp4" onclick="playvideo(this)">
+            <div>転生林檎</div>
+            <div>转生苹果</div>
+        </div>
+
+        <div class="cho" video="天天天国地獄国.mp4" onclick="playvideo(this)">
+            <div>天天天国地獄国</div>
+            <div>天天天国地狱国</div>
+        </div>
+
+        <div class="cho" video="超主人公.mp4" onclick="playvideo(this)">
+            <div>超主人公</div>
+            <div>超主人公</div>
+        </div>
+
+        <div class="cho" video="Cherry Pop.mp4" onclick="playvideo(this)">
+            <div>Cherry Pop</div>
+            <div>Cherry Pop</div>
+        </div>
+
+        <div class="cho" video="神っぽいな.mp4" onclick="playvideo(this)">
+            <div>神っぽいな</div>
+            <div>像神一样呐</div>
+        </div>
+
+        <div class="cho" video="妄想感傷代償連盟.mp4" onclick="playvideo(this)">
+            <div>妄想感傷代償連盟</div>
+            <div>妄想感伤代偿联盟</div>
+        </div>
+
+        <div class="cho" video="妄想感伤代偿联盟.mp4" onclick="playvideo(this)">
+            <div>妄想感伤代偿联盟</div>
+            <div>妄想感伤代偿联盟</div>
+        </div>
 
     </div>
 
@@ -49,7 +113,7 @@
             var video = document.getElementById('video')
             var videopath = `songs/${el.getAttribute('video')}`
             video.src = videopath
-            video.play()
+            // video.play()
             // video.load()
             el.style.color = 'white'
             el.style.backgroundColor = 'black'
