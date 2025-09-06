@@ -114,8 +114,10 @@
             video.style.display = "block"
             var videopath = `songs/${el.getAttribute('video')}`
             video.src = videopath
-            // video.play()
-            // video.load()
+            video.style.display = "none"
+            video.load()
+            video.style.display = "block"
+            video.play()
             if (last != 0){
                 last.style.color = 'black'
                 last.style.backgroundColor = 'white'
