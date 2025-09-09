@@ -106,8 +106,8 @@
     </div>
 
     <div style="width: 70vw; height: 39.5vw; color: black; background-color: white; border: 2px black solid; border-radius: 20px; overflow: hidden;" id="videodiv">
-        <video style="width: 100.4%;" controls="controls" id="video">
-            <source src="songs/T氏の話を信じるな.mp4" type="video/mp4">
+        <video style="width: 100.4%; display: none;" controls="controls" id="video">
+            <source src="" type="video/mp4">
         </video>
     </div>
 
@@ -180,14 +180,13 @@
             document.body.style.alignContent = "flex-start";
         }
 
-        var player = videojs('video');
         var last = 0;
         function playvideo(el){
-            video.style.display = "block";
-            var videopath = `songs/${el.getAttribute('video')}`;
-            player.src({type: 'video/mp4', src: videopath});
-            player.load();
-            player.play();
+            var video = document.getElementById('video')
+            video.style.display = "block"
+            var videopath = `songs/${el.getAttribute('video')}`
+            video.src = videopath
+            video.play()
             // video.load()
             if (last != 0){
                 last.style.color = 'black';
