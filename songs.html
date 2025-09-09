@@ -18,9 +18,9 @@
 </head>
 <body style="margin: 0; padding: 0; display: flex; justify-content: center; height: 100%; align-content: center; flex-wrap: wrap; justify-content: space-evenly">
 
-    <div style="width: 20vw; height: 37.5vw; color: black; background-color: white; border: 2px black solid; border-radius: 20px; padding: 1vw; overflow: scroll;">
+    <div style="width: 20vw; height: 37.5vw; color: black; background-color: white; border: 2px black solid; border-radius: 20px; padding: 1vw; overflow: scroll;" id="chodiv">
         <div style="font-size: 2vw;">歌曲列表</div>
-        <div style="height: 3vh;"></div>
+        <div style="height: 3vh;" id="sp"></div>
 
 
         <div class="cho" video="Butcher Vanity.mp4" onclick="playvideo(this)">
@@ -105,7 +105,7 @@
 
     </div>
 
-    <div style="width: 70vw; height: 39.5vw; color: black; background-color: white; border: 2px black solid; border-radius: 20px; overflow: hidden;">
+    <div style="width: 70vw; height: 39.5vw; color: black; background-color: white; border: 2px black solid; border-radius: 20px; overflow: hidden;" id="videodiv">
         <video style="width: 100.4%;" controls="controls" id="video">
             <source src="songs/T氏の話を信じるな.mp4" type="video/mp4">
         </video>
@@ -115,8 +115,71 @@
     <script>
         document.addEventListener('DOMContentLoaded', function(){
             var video = document.getElementById('video');
-            video.style.display = "none"
-        })
+            video.style.display = "none";
+            var viewportWidth = window.innerWidth;
+            var viewportHeight = window.innerHeight;
+            if (viewportHeight > viewportWidth){
+                changetoshu();
+            };
+        });
+
+        window.addEventListener('resize', () => {
+            var viewportWidth = window.innerWidth;
+            var viewportHeight = window.innerHeight;
+            if (viewportHeight > viewportWidth){
+                changetoshu();
+            }
+            else{
+                changetoheng();
+            };
+        });
+
+        function changetoheng(){
+            var cho = document.getElementsByClassName("cho");
+            for(var i = 0; i < cho.length; i++){
+                cho[i].style.fontSize = "1.5vw";
+                cho[i].children[1].style.fontSize = "1vw";
+            };
+            var sp = document.getElementById("sp");
+            sp.style.height = "3vh";
+            var chodiv = document.getElementById("chodiv");
+            chodiv.style.width = "20vw";
+            chodiv.style.margin = "";
+            chodiv.children[0].style.fontSize = "2vw";
+            chodiv.style.position = "";
+            chodiv.style.top = "0";
+            chodiv.style.height = "37.5vw";
+            var videodiv = document.getElementById("videodiv");
+            videodiv.style.position = "";
+            videodiv.style.bottom = "0";
+            videodiv.style.width = "70vw";
+            document.body.style.alignContent = "center";
+        }
+
+        function changetoshu(){
+            var cho = document.getElementsByClassName("cho");
+            for(var i = 0; i < cho.length; i++){
+                cho[i].style.fontSize = "5vw";
+                cho[i].children[1].style.fontSize = "3vw";
+            };
+            var sp = document.getElementById("sp");
+            sp.style.height = "5px";
+            var chodiv = document.getElementById("chodiv");
+            chodiv.style.width = "90vw";
+            chodiv.style.margin = "5vw";
+            chodiv.children[0].style.fontSize = "5vw";
+            chodiv.style.position = "relative";
+            chodiv.style.top = "44.5vw";
+            var viewportWidth = window.innerWidth;
+            var viewportHeight = window.innerHeight;
+            chodiv.style.height = `${viewportHeight-viewportHeight*0.15-viewportWidth*0.4}px`;
+            var videodiv = document.getElementById("videodiv");
+            videodiv.style.position = "relative";
+            videodiv.style.bottom = `${viewportHeight-viewportHeight*0.1-viewportWidth*0.395}px`;
+            videodiv.style.width = "90vw";
+            document.body.style.alignContent = "flex-start";
+        }
+
         var player = videojs('video');
         var last = 0;
         function playvideo(el){
@@ -129,7 +192,7 @@
             if (last != 0){
                 last.style.color = 'black';
                 last.style.backgroundColor = 'white';
-            }
+            };
             last = el;
             el.style.color = 'white';
             el.style.backgroundColor = 'black';
