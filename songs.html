@@ -103,6 +103,21 @@
             <div>妄想感伤代偿联盟</div>
         </div>
 
+        <div class="cho" video="ちっちゃな私.mp4" onclick="playvideo(this)">
+            <div>ちっちゃな私</div>
+            <div>小小的我</div>
+        </div>
+
+        <div class="cho" video="イガク.mp4" onclick="playvideo(this)">
+            <div>イガク</div>
+            <div>医学</div>
+        </div>
+
+        <div class="cho" video="胭脂.mp4" onclick="playvideo(this)">
+            <div>胭脂</div>
+            <div>胭脂</div>
+        </div>
+
     </div>
 
     <div style="width: 70vw; height: 39.5vw; color: black; background-color: white; border: 2px black solid; border-radius: 20px; overflow: hidden;" id="videodiv">
@@ -174,6 +189,7 @@
             var viewportWidth = window.innerWidth;
             var viewportHeight = window.innerHeight;
             chodiv.style.height = `${viewportHeight-viewportHeight*0.15-viewportWidth*0.4}px`;
+            // chodiv.style.height = "60vh"
             var videodiv = document.getElementById("videodiv");
             videodiv.style.position = "relative";
             videodiv.style.bottom = `${viewportHeight-viewportHeight*0.1-viewportWidth*0.395}px`;
