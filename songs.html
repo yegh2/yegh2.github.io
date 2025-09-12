@@ -138,7 +138,7 @@
             <div>催眠术</div>
         </div>
 
-        <div class="cho" video="超级超级超级超级超级讨厌.mp4" onclick="playvideo(this)">
+        <div class="cho" id="smallsize" video="超级超级超级超级超级讨厌.mp4" onclick="playvideo(this)" style="font-size: 1.3vw;">
             <div>超级超级超级超级超级讨厌</div>
             <div>超级超级超级超级超级讨厌</div>
         </div>
@@ -204,6 +204,7 @@
                 cho[i].style.fontSize = "1.5vw";
                 cho[i].children[1].style.fontSize = "1vw";
             };
+            document.getElementById("smallsize").style.fontSize = "1.3vw"
             var sp = document.getElementById("sp");
             sp.style.height = "3vh";
             var chodiv = document.getElementById("chodiv");
